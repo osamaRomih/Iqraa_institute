@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { WhatsappService } from './services/whatsapp.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,8 @@ import { FooterComponent } from './shared/footer/footer.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  showScrollTop = false;
+
   // constructor(private translate: TranslateService) {
   //   translate.addLangs(['en', 'ar']);
   //   translate.setDefaultLang('en');
@@ -21,4 +24,20 @@ export class AppComponent {
   // switchLang(lang: string) {
   //   this.translate.use(lang);
   // }
+
+  constructor(private whatsapp_service: WhatsappService) {}
+
+  goToWhatsapp() {
+    const message = 'السلام عليكم، أود حجز موعد مع معلم لتحفيظ القرآن الكريم.';
+    this.whatsapp_service.openWhatsapp(message);
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.showScrollTop = window.scrollY > 300;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

@@ -124,18 +124,31 @@
           <span class="footer-contact-title-en">Contact Info</span>
         </h3>
         <div class="contact-item">
-          <span class="contact-icon"
-            ><i class="fa-solid fa-location-dot text-xl text-lime-50"></i
-          ></span>
+          <span class="contact-icon">
+            <i class="fa-solid fa-location-dot text-xl text-lime-50"></i>
+          </span>
           <span>
-            <span id="contact-address-en"
-              >123 Learning Street, Education City, EC 12345</span
-            >
-            <span id="contact-address-ar" class="hidden"
-              >شارع التعلم 123، مدينة التعليم، EC 12345</span
-            >
+            <!-- الفرع الأول: القاهرة -->
+            <strong>
+              <span class="branch-en"> Cairo, Egypt</span>
+              <span class="branch-ar hidden">فرع القاهرة:</span>
+            </strong>
           </span>
         </div>
+
+        <div class="contact-item">
+          <span class="contact-icon">
+            <i class="fa-solid fa-location-dot text-xl text-lime-50"></i>
+          </span>
+          <span>
+            <!-- الفرع الثاني: الإسكندرية -->
+            <strong>
+              <span class="branch-en"> Alexandria, Egypt</span>
+              <span class="branch-ar hidden">فرع الإسكندرية:</span>
+            </strong>
+          </span>
+        </div>
+
         <div class="contact-item">
           <span class="contact-icon"
             ><i class="fas fa-envelope text-xl text-lime-50"></i
@@ -157,21 +170,89 @@
       <div class="footer-section">
         <h3>
           <span class="footer-hours-title-en">Office Hours</span>
+          <span class="footer-hours-title-ar hidden">ساعات العمل</span>
         </h3>
-        <p>
-          <strong
-            ><span class="hours1-en">Monday - Friday:</span
-            ><span class="hours1-ar hidden">الاثنين - الجمعة:</span></strong
-          ><br /><span class="hours1-time-en">9:00 AM - 8:00 PM</span
-          ><span class="hours1-time-ar hidden">9:00 صباحًا - 8:00 مساءً</span>
-        </p>
-        <p>
-          <strong
-            ><span class="hours2-en">Saturday - Sunday:</span
-            ><span class="hours2-ar hidden">السبت - الأحد:</span></strong
-          ><br /><span class="hours2-time-en">10:00 AM - 6:00 PM</span
-          ><span class="hours2-time-ar hidden">10:00 صباحًا - 6:00 مساءً</span>
-        </p>
+
+        <div class="office-hours-grid flex gap-8">
+          <div>
+            <!-- السبت -->
+            <div class="day">
+              <strong>
+                <span class="day-en">Saturday:</span>
+                <span class="day-ar hidden">السبت:</span>
+              </strong>
+              <br />
+              <span class="time-en">24 Hours</span>
+              <span class="time-ar hidden">24 ساعة</span>
+            </div>
+
+            <!-- الأحد -->
+            <div class="day">
+              <strong>
+                <span class="day-en">Sunday:</span>
+                <span class="day-ar hidden">الأحد:</span>
+              </strong>
+              <br />
+              <span class="time-en">24 Hours</span>
+              <span class="time-ar hidden">24 ساعة</span>
+            </div>
+
+            <!-- الاثنين -->
+            <div class="day">
+              <strong>
+                <span class="day-en">Monday:</span>
+                <span class="day-ar hidden">الاثنين:</span>
+              </strong>
+              <br />
+              <span class="time-en">24 Hours</span>
+              <span class="time-ar hidden">24 ساعة</span>
+            </div>
+          </div>
+          <div>
+            <!-- الثلاثاء -->
+            <div class="day">
+              <strong>
+                <span class="day-en">Tuesday:</span>
+                <span class="day-ar hidden">الثلاثاء:</span>
+              </strong>
+              <br />
+              <span class="time-en">24 Hours</span>
+              <span class="time-ar hidden">24 ساعة</span>
+            </div>
+
+            <!-- الأربعاء -->
+            <div class="day">
+              <strong>
+                <span class="day-en">Wednesday:</span>
+                <span class="day-ar hidden">الأربعاء:</span>
+              </strong>
+              <br />
+              <span class="time-en">24 Hours</span>
+              <span class="time-ar hidden">24 ساعة</span>
+            </div>
+
+            <!-- الخميس -->
+            <div class="day">
+              <strong>
+                <span class="day-en">Thursday:</span>
+                <span class="day-ar hidden">الخميس:</span>
+              </strong>
+              <br />
+              <span class="time-en">24 Hours</span>
+              <span class="time-ar hidden">24 ساعة</span>
+            </div>
+            <!-- الجمعة -->
+            <div class="day">
+              <strong>
+                <span class="day-en">Friday:</span>
+                <span class="day-ar hidden">الجمعة:</span>
+              </strong>
+              <br />
+              <span class="time-en">Closed</span>
+              <span class="time-ar hidden">مغلق</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">

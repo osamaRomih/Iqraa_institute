@@ -6,12 +6,17 @@
   <app-footer></app-footer>
 
   <!-- Fixed WhatsApp button-->
-  <a
-    href="https://wa.me/+201002858839?text=السلام%20عليكم،%20أرغب%20بحجز%20موعد%20مع%20معلم%20لتحفيظ%20القرآن%20الكريم."
-    target="_blank"
-    class="whatsapp-float"
-    aria-label="WhatsApp Chat"
-  >
+  <a (click)="goToWhatsapp()" class="whatsapp-float" aria-label="WhatsApp Chat">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <!-- Scroll to Top button -->
+  <button
+    class="scroll-top"
+    (click)="scrollToTop()"
+    [class.show]="showScrollTop"
+    aria-label="Scroll to Top"
+  >
+    <i class="fa-solid fa-angle-double-up"></i>
+  </button>
 </div>
