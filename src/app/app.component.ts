@@ -28,7 +28,10 @@ export class AppComponent {
   constructor(private whatsapp_service: WhatsappService) {}
 
   goToWhatsapp() {
-    const message = 'السلام عليكم، أود حجز موعد مع معلم لتحفيظ القرآن الكريم.';
+    // const message = 'السلام عليكم، أود حجز موعد مع معلم لتحفيظ القرآن الكريم.';
+
+    const message =
+      'I would like to book an appointment with a teacher to memorize the Holy Quran.';
     this.whatsapp_service.openWhatsapp(message);
   }
 

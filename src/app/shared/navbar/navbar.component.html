@@ -47,11 +47,14 @@
             >Team</a
           >
         </li>
-        <li>
-          <a routerLinkActive="active" href="#testimonials" class="nav-link-en"
+        <!-- <li>
+          <a
+            [class.active]="activeSection === 'testimonials'"
+            (click)="scrollToSection('testimonials')"
+            class="nav-link-en"
             >Testimonials</a
           >
-        </li>
+        </li> -->
         <li>
           <a routerLinkActive="active" routerLink="contact" class="nav-link-en"
             >Contact</a

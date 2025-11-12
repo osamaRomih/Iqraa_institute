@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { WhatsappService } from '../../../../services/whatsapp.service';
 
 @Component({
@@ -11,9 +11,16 @@ import { WhatsappService } from '../../../../services/whatsapp.service';
 })
 export class PackagesComponent {
   activeTab: '30' | '60' = '30';
+  indicatorLeft = 0;
+  indicatorWidth = 0;
   showTab: boolean = true;
 
-  constructor(private whatsapp_service: WhatsappService) {}
+  @ViewChild('tab30') tab30!: ElementRef<HTMLButtonElement>;
+  @ViewChild('tab60') tab60!: ElementRef<HTMLButtonElement>;
+  @ViewChild('tabContainer') tabContainer!: ElementRef<HTMLDivElement>;
+
+  ngOnInit() {}
+
   ngAfterViewInit() {
     this.moveIndicator(this.activeTab);
   }
@@ -25,36 +32,45 @@ export class PackagesComponent {
   }
 
   private moveIndicator(tab: '30' | '60') {
-    const indicator = document.getElementById('tab-indicator');
-    const tabButton = document.getElementById(`tab-${tab}`);
+    const tabButton =
+      tab === '30' ? this.tab30.nativeElement : this.tab60.nativeElement;
+    const containerRect =
+      this.tabContainer.nativeElement.getBoundingClientRect();
+    const tabRect = tabButton.getBoundingClientRect();
 
-    if (indicator && tabButton) {
-      const tabRect = tabButton.getBoundingClientRect();
-      const containerRect = tabButton.parentElement!.getBoundingClientRect();
-
-      const left = tabRect.left - containerRect.left;
-      const width = tabRect.width;
-
-      indicator.style.left = `${left}px`;
-      indicator.style.width = `${width}px`;
-    }
+    this.indicatorLeft = tabRect.left - containerRect.left;
+    this.indicatorWidth = tabRect.width;
   }
-
+  constructor(private whatsapp_service: WhatsappService) {}
+  @HostListener('window:resize')
+  onResize() {
+    this.moveIndicator(this.activeTab);
+  }
   handleBooking(
     planName: string,
     duration: string,
     sessions: string,
     price: string
   ) {
+    //     const message = `
+    // السلام عليكم ورحمة الله وبركاته
+    // أرغب في حجز باقة جديدة من "معهد أقرأ"
+    // - نوع الباقة: ${planName}
+    // - مدة الجلسة: ${duration}
+    // - عدد الحصص: ${sessions}
+    // - السعر الشهري: ${price} دولار
+    // من فضلكم تواصلوا معي لإتمام الحجز. جزاكم الله خيرًا
+    //   `;
+
     const message = `
-السلام عليكم ورحمة الله وبركاته
-أرغب في حجز باقة جديدة من "معهد أقرأ"
-- نوع الباقة: ${planName}
-- مدة الجلسة: ${duration}
-- عدد الحصص: ${sessions}
-- السعر الشهري: ${price} دولار
-من فضلكم تواصلوا معي لإتمام الحجز. جزاكم الله خيرًا
-  `;
+Peace be upon you
+I would like to book a new package from "Iqraa Institute".
+- Package Type: ${planName}
+- Session Duration: ${duration}
+- Number of Classes: ${sessions}
+- Monthly Price: ${price} USD
+Please contact me to complete the booking. May Allah reward you.
+`;
     this.whatsapp_service.openWhatsapp(message);
   }
 }

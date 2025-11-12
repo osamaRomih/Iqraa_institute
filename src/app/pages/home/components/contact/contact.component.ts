@@ -54,7 +54,8 @@ export class ContactComponent {
         `- *Email:* ${email}\n` +
         `- *Phone:* ${phone}\n` +
         `- *Country:* ${country}\n` +
-        `- *Message:* ${message}`;
+        `- *Message:* ${message}
+         - I would like to book a lesson and would like to know the rest of the details.`;
 
       this.whatsapp_service.openWhatsapp(text);
 

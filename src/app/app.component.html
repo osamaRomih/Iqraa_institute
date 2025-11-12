@@ -1,9 +1,17 @@
 <div class="main">
-  <app-navbar></app-navbar>
+  <!-- navber -->
+  <div class="navber">
+    <app-navbar></app-navbar>
+  </div>
+  <!-- content -->
   <div class="content">
     <router-outlet></router-outlet>
   </div>
-  <app-footer></app-footer>
+
+  <!-- footer -->
+  <div>
+    <app-footer></app-footer>
+  </div>
 
   <!-- Fixed WhatsApp button-->
   <a (click)="goToWhatsapp()" class="whatsapp-float" aria-label="WhatsApp Chat">

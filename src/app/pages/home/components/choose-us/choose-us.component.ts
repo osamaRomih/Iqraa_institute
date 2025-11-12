@@ -7,6 +7,7 @@ import {
   animate,
 } from '@angular/animations';
 import { CommonModule } from '@angular/common';
+import { WhatsappService } from '../../../../services/whatsapp.service';
 
 @Component({
   selector: 'app-choose-us',
@@ -29,6 +30,7 @@ export class ChooseUsComponent {
   activeIndex: number | null = null;
 
   @ViewChild('statsSection') statsSection!: ElementRef;
+  constructor(private whatsapp_service: WhatsappService) {}
 
   stats = [
     { label: 'Students Enrolled', target: 1500, current: 0 },
@@ -74,27 +76,69 @@ export class ChooseUsComponent {
 
   items = [
     {
-      title: 'المرونة في تحديد الأوقات',
-      content: 'يتمتع الطالب بحرية اختيار المواعيد المناسبة له بسهولة وراحة.',
+      title: 'Commitment & Time Value',
+      content:
+        'Our mission is to maintain discipline and respect for time — ensuring both the teacher and student make the most of every minute.',
     },
     {
-      title: 'حلقات فردية بين الطالب والمعلم',
+      title: 'One-on-One Sessions',
       content:
-        'تفاعل مباشر يضمن التركيز الكامل وتقدم مستمر في الحفظ والمراجعة.',
+        'Personalized classes between teacher and student to ensure full attention and steady progress in memorization and recitation.',
     },
     {
-      title: 'دروس متخصصة في العلوم الشرعية',
+      title: 'Special Department for Non-Arabic Speakers',
       content:
-        'نقدم دروساً متقنة في التفسير والفقه والعقيدة على أيدي معلمين مؤهلين.',
+        'Available in multiple languages, taught by qualified teachers specialized in teaching Quran to non-native speakers, both Arabs and non-Arabs (Ajam and non-Ajam).',
+    },
+    // {
+    //   title: 'Classes in Arabic Language',
+    //   content:
+    //     'We provide structured lessons in Arabic to help students master the language of the Qur’an.',
+    // },
+    // {
+    //   title: 'Islamic Studies Courses',
+    //   content:
+    //     'Comprehensive lessons in Tafsir, Fiqh, and Aqeedah delivered by professional Islamic scholars.',
+    // },
+    {
+      title: 'Arabic Language & Islamic Studies',
+      content:
+        'We offer structured lessons in Arabic along with comprehensive courses in Tafsir, Fiqh, and Aqeedah — helping students understand and live by the teachings of the Qur’an.',
+    },
+    // {
+    //   title: 'Noorani Qaida for Beginners',
+    //   content:
+    //     'A strong foundation for reading and pronunciation through the famous Noorani Qaida system.',
+    // },
+    // {
+    //   title: 'Rewards & Certificates',
+    //   content:
+    //     'Special recognition, rewards, and certificates for high-achieving and dedicated students.',
+    // },
+    {
+      title: 'Certified Curriculum & Books',
+      content:
+        "We provide an accredited study plan, officially approved materials for every student, and teaching of Al-Qaa'idah Al-Nooriyah.",
     },
     {
-      title: 'قسم خاص لتعليم الأعاجم',
+      title: 'Regular Assessments',
       content:
-        'متاح بجميع اللغات مع مدرّسين متخصصين في تعليم غير الناطقين بالعربية.',
+        'Monthly progress evaluations and level-based testing to ensure continuous improvement.',
+    },
+    {
+      title: '24/7 Student Support',
+      content:
+        'Our dedicated support team is available around the clock to assist students and parents anytime.',
     },
   ];
 
   toggleItem(index: number) {
     this.activeIndex = this.activeIndex === index ? null : index;
+  }
+
+  goToWhatsapp() {
+    const message =
+      'I would like to book an appointment with a tutor to learn the Holy Quran.';
+    this.whatsapp_service.openWhatsapp(message);
   }
 }

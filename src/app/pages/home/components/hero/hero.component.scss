@@ -165,7 +165,7 @@
 }
 
 .btn-secondary:hover {
-  background: $color-text3;
+  background: linear-gradient(135deg, #b88a00, #ffd700);
   color: $bg1;
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(150, 103, 20, 0.3);
@@ -187,7 +187,6 @@
 }
 
 .hero-svg {
-  // height: auto;
   text-align: end;
   filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.15));
 }
@@ -281,7 +280,7 @@
   }
 
   .btn-secondary {
-    background: #b88000;
+    background: linear-gradient(135deg, #b88a00, #ffd700);
     color: #fff;
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(150, 103, 20, 0.3);
