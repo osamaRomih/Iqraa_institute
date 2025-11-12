@@ -7,7 +7,7 @@ export class WhatsappService {
   private phoneNumber = '+201002858839';
 
   openWhatsapp(message: string): void {
-    const encodedMessage = encodeURIComponent(message);
+    const encodedMessage = encodeURIComponent(message.trim());
     const url = `https://wa.me/${this.phoneNumber}?text=${encodedMessage}`;
     window.open(url, '_blank');
   }

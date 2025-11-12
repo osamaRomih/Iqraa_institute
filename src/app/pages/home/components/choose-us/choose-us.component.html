@@ -1,0 +1,44 @@
+<section class="why-choose-us">
+  <div class="section-container">
+    <h2 class="section-title">Why us Iqraa Institute?</h2>
+    <div class="why-container">
+      <!-- Images -->
+      <div class="image-section">
+        <img
+          src="./assets/images/choose-us.png"
+          alt="why-choose-us "
+          width="600px"
+        />
+      </div>
+      <!-- accordion -->
+      <div class="accordion-section flex-grow">
+        <div class="accordion">
+          @for (item of items; track item; let i = $index) {
+
+          <div class="accordion-item" [class.active]="activeIndex === i">
+            <button class="accordion-header" (click)="toggleItem(i)">
+              {{ item.title }}
+            </button>
+
+            <div class="accordion-body">
+              {{ item.content }}
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-animated">
+    <span>Book Your Tutor</span>
+  </button>
+</section>
+<!-- statistics -->
+<section class="statistics" #statsSection>
+  <div class="stats-container">
+    <div class="stat-item" *ngFor="let stat of stats">
+      <h3 class="counter">+{{ stat.current }}</h3>
+      <p>{{ stat.label }}</p>
+    </div>
+  </div>
+</section>

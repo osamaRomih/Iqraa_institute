@@ -1,0 +1,311 @@
+<section class="pricing-section">
+  <div class="pricing-container">
+    <!-- Header -->
+    <header class="pricing-header">
+      <h1 class="pricing-title" id="main-title">Our Pricing Plans</h1>
+      <p class="pricing-subtitle" id="subtitle">
+        Get a free trial – for all plans <br />
+        Choose the plan that fits you best
+      </p>
+    </header>
+    <!-- Tab Switcher -->
+    <div class="tab-switcher">
+      <div class="tab-container">
+        <div class="tab-indicator" id="tab-indicator"></div>
+        <button
+          class="tab-button"
+          id="tab-30"
+          [class.active]="activeTab === '30'"
+          (click)="switchTab('30')"
+        >
+          <span class="tab-icon"></span>
+          <span id="tab-30-label">30 Minutes</span>
+          <span class="arrow-indicator">→</span>
+        </button>
+
+        <button
+          class="tab-button"
+          id="tab-60"
+          [class.active]="activeTab === '60'"
+          (click)="switchTab('60')"
+        >
+          <span class="tab-icon"></span>
+          <span id="tab-60-label">60 Minutes</span>
+          <span class="arrow-indicator">→</span>
+        </button>
+      </div>
+    </div>
+    <!-- 30 Minutes Plans -->
+    <div class="pricing-grid" *ngIf="showTab">
+      <article class="pricing-card">
+        <div class="card-icon">
+          <span
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
+              alt="Basic Icon"
+              width="50"
+          /></span>
+        </div>
+        <h3 class="plan-name" id="plan-30-1-name">8 Classes</h3>
+        <div class="plan-duration">
+          <span class="duration-icon"></span>
+          <span>30 minutes per session</span>
+        </div>
+        <div class="plan-price">
+          <div class="price-amount">
+            <span class="price-currency">$</span
+            ><span id="plan-30-1-price">34</span>
+          </div>
+          <span class="price-period" id="plan-30-1-period">per month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="feature-icon">✓</span> 30 minutes per session</li>
+          <li><span class="feature-icon">✓</span> 2 Weekly Classes</li>
+          <li><span class="feature-icon">✓</span> 8 sessions per month</li>
+          <li><span class="feature-icon">✓</span> Certified Quran teacher</li>
+          <li><span class="feature-icon">✓</span> Basic Tajweed lessons</li>
+          <li><span class="feature-icon">✓</span> Progress tracking</li>
+          <li><span class="feature-icon">✓</span> One on one class</li>
+        </ul>
+
+        <button
+          class="book-button"
+          (click)="
+            handleBooking('8 Classes', '30 minutes', '2 Weekly Classes', '34$')
+          "
+        >
+          <span class="button-text">
+            <span id="button-text-1">Book Now</span>
+          </span>
+        </button>
+        <div class="discount-banner">Save 10%</div>
+      </article>
+      <article class="pricing-card">
+        <div class="popular-badge">POPULAR</div>
+        <div class="card-icon">
+          <span
+            ><i
+              class="fas fa-rocket"
+              style="color: #f9c000; font-size: 50px"
+            ></i
+          ></span>
+        </div>
+        <h3 class="plan-name" id="plan-30-2-name">12 Classes</h3>
+        <div class="plan-duration">
+          <span class="duration-icon"></span>
+          <span>30 minutes per session</span>
+        </div>
+        <div class="plan-price">
+          <div class="price-amount">
+            <span class="price-currency">$</span
+            ><span id="plan-30-2-price">51</span>
+          </div>
+          <span class="price-period" id="plan-30-2-period">per month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="feature-icon">✓</span> 30 minutes per session</li>
+          <li><span class="feature-icon">✓</span> 3 Weekly Classes</li>
+          <li><span class="feature-icon">✓</span> 12 sessions per month</li>
+          <li><span class="feature-icon">✓</span> Expert Quran teacher</li>
+          <li><span class="feature-icon">✓</span> Advanced Tajweed</li>
+          <li><span class="feature-icon">✓</span> Memorization support</li>
+          <li><span class="feature-icon">✓</span> Monthly reports</li>
+          <li><span class="feature-icon">✓</span> One on one class</li>
+        </ul>
+        <button
+          class="book-button"
+          (click)="
+            handleBooking('12 Classes', '30 minutes', '3 Weekly Classes', '51$')
+          "
+        >
+          <span class="button-text">
+            <span id="button-text-2">Book Now</span>
+          </span>
+        </button>
+        <div class="discount-banner">Save 20%</div>
+      </article>
+      <article class="pricing-card">
+        <div class="card-icon">
+          <span>
+            <i class="fas fa-crown" style="color: #f9c000; font-size: 50px"></i>
+          </span>
+        </div>
+        <h3 class="plan-name" id="plan-30-3-name">16 Classes</h3>
+        <div class="plan-duration">
+          <span class="duration-icon"></span>
+          <span>30 minutes per session</span>
+        </div>
+        <div class="plan-price">
+          <div class="price-amount">
+            <span class="price-currency">$</span
+            ><span id="plan-30-3-price">64</span>
+          </div>
+          <span class="price-period" id="plan-30-3-period">per month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="feature-icon">✓</span> 30 minutes per session</li>
+          <li><span class="feature-icon">✓</span> 4 Weekly Classes</li>
+          <li><span class="feature-icon">✓</span> 16 sessions per month</li>
+          <li><span class="feature-icon">✓</span> Master Quran teacher</li>
+          <li><span class="feature-icon">✓</span> Complete Tajweed mastery</li>
+          <li><span class="feature-icon">✓</span> Ijazah preparation</li>
+          <li><span class="feature-icon">✓</span> Priority scheduling</li>
+          <li><span class="feature-icon">✓</span> Weekly reports</li>
+          <li><span class="feature-icon">✓</span> One on one class</li>
+        </ul>
+        <button
+          class="book-button mb-8"
+          (click)="
+            handleBooking('16 Classes', '30 minutes', '4 Weekly Classes', '64$')
+          "
+        >
+          <span class="button-text">
+            <span id="button-text-3">Book Now</span>
+          </span>
+        </button>
+        <div class="discount-banner">Save 30%</div>
+      </article>
+    </div>
+    <!-- 1 Hour Plans -->
+    <div class="pricing-grid" *ngIf="!showTab">
+      <article class="pricing-card">
+        <div class="card-icon">
+          <span
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png"
+              alt="Basic Icon"
+              width="50"
+            />
+          </span>
+        </div>
+        <h3 class="plan-name" id="plan-60-1-name">8 Classes</h3>
+        <div class="plan-duration">
+          <span class="duration-icon"></span>
+          <span>60 minutes per session</span>
+        </div>
+        <div class="plan-price">
+          <div class="price-amount">
+            <span class="price-currency">$</span
+            ><span id="plan-60-1-price">68</span>
+          </div>
+          <span class="price-period" id="plan-60-1-period">per month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="feature-icon">✓</span> 60 minutes per session</li>
+          <li><span class="feature-icon">✓</span> 2 Weekly Classes</li>
+          <li><span class="feature-icon">✓</span> 8 sessions per month</li>
+          <li><span class="feature-icon">✓</span> Certified Quran teacher</li>
+          <li><span class="feature-icon">✓</span> Basic Tajweed lessons</li>
+          <li><span class="feature-icon">✓</span> Progress tracking</li>
+          <li><span class="feature-icon">✓</span> One on one class</li>
+        </ul>
+        <button
+          class="book-button"
+          (click)="
+            handleBooking('8 Classes', '60 minutes', '2 Weekly Classes', '68$')
+          "
+        >
+          <span class="button-text">
+            <span id="button-text-4">Book Now</span>
+          </span>
+        </button>
+        <div class="discount-banner">Save 10%</div>
+      </article>
+      <article class="pricing-card">
+        <div class="popular-badge">POPULAR</div>
+        <div class="card-icon">
+          <span
+            ><i
+              class="fas fa-rocket"
+              style="color: #f9c000; font-size: 50px"
+            ></i>
+          </span>
+        </div>
+        <h3 class="plan-name" id="plan-60-2-name">12 Classes</h3>
+        <div class="plan-duration">
+          <span class="duration-icon"></span>
+          <span>60 minutes per session</span>
+        </div>
+        <div class="plan-price">
+          <div class="price-amount">
+            <span class="price-currency">$</span
+            ><span id="plan-60-2-price">102</span>
+          </div>
+          <span class="price-period" id="plan-60-2-period">per month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="feature-icon">✓</span> 60 minutes per session</li>
+          <li><span class="feature-icon">✓</span> 3 Weekly Classes</li>
+          <li><span class="feature-icon">✓</span> 12 sessions per month</li>
+          <li><span class="feature-icon">✓</span> Expert Quran teacher</li>
+          <li><span class="feature-icon">✓</span> Advanced Tajweed</li>
+          <li><span class="feature-icon">✓</span> Memorization support</li>
+          <li><span class="feature-icon">✓</span> Monthly reports</li>
+          <li><span class="feature-icon">✓</span> One on one class</li>
+        </ul>
+        <button
+          class="book-button"
+          (click)="
+            handleBooking(
+              '12 Classes',
+              '60 minutes',
+              '3 Weekly Classes',
+              '102$'
+            )
+          "
+        >
+          <span class="button-text">
+            <span id="button-text-5">Book Now</span>
+          </span>
+        </button>
+        <div class="discount-banner">Save 20%</div>
+      </article>
+      <article class="pricing-card">
+        <div class="card-icon">
+          <span>
+            <i class="fas fa-crown" style="color: #f9c000; font-size: 50px"></i>
+          </span>
+        </div>
+        <h3 class="plan-name" id="plan-60-3-name">16 Classes</h3>
+        <div class="plan-duration">
+          <span class="duration-icon"></span>
+          <span>60 minutes per session</span>
+        </div>
+        <div class="plan-price">
+          <div class="price-amount">
+            <span class="price-currency">$</span
+            ><span id="plan-60-3-price">120</span>
+          </div>
+          <span class="price-period" id="plan-60-3-period">per month</span>
+        </div>
+        <ul class="plan-features">
+          <li><span class="feature-icon">✓</span> 60 minutes per session</li>
+          <li><span class="feature-icon">✓</span> 4 Weekly Classes</li>
+          <li><span class="feature-icon">✓</span> 16 sessions per month</li>
+          <li><span class="feature-icon">✓</span> Master Quran teacher</li>
+          <li><span class="feature-icon">✓</span> Complete Tajweed mastery</li>
+          <li><span class="feature-icon">✓</span> Ijazah preparation</li>
+          <li><span class="feature-icon">✓</span> Priority scheduling</li>
+          <li><span class="feature-icon">✓</span> Weekly reports</li>
+          <li><span class="feature-icon">✓</span> One on one class</li>
+        </ul>
+        <button
+          class="book-button mb-8"
+          (click)="
+            handleBooking(
+              '16 Classes',
+              '60 minutes',
+              '4 Weekly Classes',
+              '120$'
+            )
+          "
+        >
+          <span class="button-text">
+            <span id="button-text-6">Book Now</span>
+          </span>
+        </button>
+        <div class="discount-banner">Save 30%</div>
+      </article>
+    </div>
+  </div>
+</section>

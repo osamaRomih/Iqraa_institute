@@ -4,6 +4,7 @@ import {
   provideZoneChangeDetection,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { register as registerSwiperElements } from 'swiper/element/bundle';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -17,6 +18,7 @@ import {
   TRANSLATE_HTTP_LOADER_CONFIG,
 } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+registerSwiperElements();
 
 // ✅ function to create the TranslateHttpLoader
 export function HttpLoaderFactory() {
@@ -29,9 +31,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
 
-    // ✅ إعداد HttpClient
     provideHttpClient(withInterceptorsFromDi()),
-    // ✅ إعداد ngx-translate
     importProvidersFrom(
       TranslateModule.forRoot({
         fallbackLang: 'en',
@@ -42,12 +42,11 @@ export const appConfig: ApplicationConfig = {
       })
     ),
 
-    // ✅ إعداد المسار الخاص بملفات الترجمة
     {
       provide: TRANSLATE_HTTP_LOADER_CONFIG,
       useValue: {
-        prefix: './assets/i18n/', // مكان ملفات الترجمة
-        suffix: '.json', // الامتداد
+        prefix: './assets/i18n/',
+        suffix: '.json',
       },
     },
   ],

@@ -1,0 +1,53 @@
+<section class="testimonials-section" ngSkipHydration>
+  <div class="containers" style="width: 100%">
+    <h2 class="section-title">Our Testimonials</h2>
+
+    <swiper-container
+      slides-per-view="1"
+      space-between="30"
+      loop="true"
+      autoplay-delay="3000"
+      autoplay-disable-on-interaction="false"
+      pagination='{"clickable": true}'
+      keyboard="true"
+      grab-cursor="true"
+      effect="coverflow"
+      class="mySwiper"
+    >
+      <!-- Testimonial Slides -->
+      <ng-container *ngFor="let testimonial of testimonials; let i = index">
+        <swiper-slide class="">
+          <div class="testimonial-card grow">
+            <div class="quote-icon top">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="testimonial-message mt-6">"{{ testimonial.message }}"</p>
+            <h4 class="testimonial-name">- {{ testimonial.name }} -</h4>
+            <div class="quote-icon bottom">
+              <i class="fa-solid fa-quote-right"></i>
+            </div>
+          </div>
+        </swiper-slide>
+      </ng-container>
+    </swiper-container>
+  </div>
+</section>
+
+<!-- Free Trial Section -->
+<section class="free-trial-section">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="text">
+      <h2>Get a Free Trial Session</h2>
+      <p>
+        Experience a free Session to discover our interactive and high-quality
+        learning journey. Try it yourself before you decide to join!
+      </p>
+    </div>
+    <div class="button-wrapper">
+      <button class="cta-button" (click)="goToWhatsapp()">
+        Get Your Free Trial Now
+      </button>
+    </div>
+  </div>
+</section>

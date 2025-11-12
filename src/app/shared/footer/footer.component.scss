@@ -50,11 +50,15 @@ footer::after {
 }
 
 .footer-section h3 {
-  color: #b58414;
+  color: #b9933b;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   display: flex;
-  align-items: center;
+  // align-items: center;
+}
+.footer-section img {
+  position: relative;
+  bottom: 15px;
 }
 
 body.dark-mode .footer-section h3 {
