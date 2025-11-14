@@ -1,0 +1,28 @@
+<main class="courses-section">
+  <div class="container">
+    <header class="section-header">
+      <h1 class="section-title" id="main-title">Explore Our Courses</h1>
+      <p class="section-subtitle" id="subtitle">
+        Learn the Quran, Arabic, and Islamic Studies from expert teachers –
+        anytime, anywhere.
+      </p>
+    </header>
+
+    <div class="courses-grid" id="courses-grid">
+      <article
+        class="course-card"
+        *ngFor="let course of courses; let i = index"
+        [style.animationDelay]="(i + 1) * 0.15 + 's'"
+      >
+        <div class="course-icon">
+          <img [src]="course.icon" [alt]="course.title" loading="lazy" />
+        </div>
+        <h3 class="course-title">{{ course.title }}</h3>
+        <p class="course-description">{{ course.desc }}</p>
+        <button class="book-button" (click)="goToWhatsapp(course.title)">
+          Enroll Now
+        </button>
+      </article>
+    </div>
+  </div>
+</main>
