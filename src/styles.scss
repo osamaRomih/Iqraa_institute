@@ -6,3 +6,24 @@
 @import "swiper/css";
 @import "swiper/css/pagination";
 @import "swiper/css/navigation";
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #b9933b;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #25d366, #4d7a28);
+  border-radius: 2px;
+}
