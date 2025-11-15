@@ -8,9 +8,9 @@
 .intro-section {
   padding: 80px 0;
   background-image: url(../../../assets/images/bg-pages/price_3.jpg);
+  background-size: cover;
   position: relative;
   overflow: hidden;
-  background-size: cover;
 }
 svg {
   overflow: visible;
@@ -725,7 +725,6 @@ svg {
   border: 2px solid transparent;
 }
 
-/* شريط علوي متحرك ذهبي */
 .pricing-card::before {
   content: "";
   position: absolute;
@@ -742,14 +741,12 @@ svg {
   transform: scaleX(1);
 }
 
-/* التأثير عند التحويم */
 .pricing-card:hover {
   transform: translateY(-15px);
   box-shadow: 0 20px 60px rgba(184, 138, 0, 0.3);
-  border-color: #d4af37; /* لون ذهبي وسطي */
+  border-color: #d4af37;
 }
 
-/* الوسم الشعبي */
 .popular-badge {
   position: absolute;
   top: 20px;
@@ -768,7 +765,6 @@ svg {
   border-color: rgba(184, 138, 0, 0.2);
 }
 
-/* الأيقونة داخل الكرت */
 .card-icon {
   width: 70px;
   height: 70px;
@@ -880,5 +876,15 @@ svg {
   border-radius: 50px;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  z-index: 0;
+  z-index: 1;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer.open {
+  max-height: 300px;
 }

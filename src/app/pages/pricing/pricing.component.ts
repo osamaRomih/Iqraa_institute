@@ -73,4 +73,10 @@ Please contact me to complete the booking. May Allah reward you.
 `;
     this.whatsapp_service.openWhatsapp(message);
   }
+
+  faqStates: boolean[] = [];
+
+  toggleFaq(i: number) {
+    this.faqStates[i] = !this.faqStates[i];
+  }
 }

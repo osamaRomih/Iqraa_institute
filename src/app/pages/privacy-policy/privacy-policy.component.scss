@@ -47,14 +47,14 @@
       font-size: 22px;
       font-weight: 600;
       margin-bottom: 10px;
-      color: #1b4f72;
+      // color: #1b4f72;
     }
 
     h3 {
       font-size: 18px;
       font-weight: 600;
       margin-top: 15px;
-      color: #145a86;
+      // color: #145a86;
     }
 
     ul {
@@ -85,30 +85,6 @@
       font-size: 14px;
       cursor: pointer;
       transition: 0.3s ease;
-
-      // &.youtube {
-      //   background: #ff0000;
-      // }
-
-      // &.facebook {
-      //   background: #1877f2;
-      // }
-
-      // &.instagram {
-      //   background: #e1306c;
-      // }
-
-      // &.tiktok {
-      //   background: #000;
-      // }
-
-      // &.email {
-      //   background: #6c5ce7;
-      // }
-
-      // &.whatsapp {
-      //   background: #25d366;
-      // }
 
       &:hover {
         opacity: 0.8;

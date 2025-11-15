@@ -5,7 +5,9 @@
       <div class="intro-text">
         <h1 id="main-title">Choose Your Plan</h1>
         <p id="description-line1">
-          We offer flexible plans to fit your study schedule.
+          We provide competitive rates and exceptional pricing plans tailored to
+          meet your requirements and budget. Additionally, we offer a range of
+          customizable plans.
         </p>
         <p id="description-line2">
           Choose the duration that suits you for the best educational
@@ -81,7 +83,6 @@
 </section>
 <div class="wave-separator"></div>
 <!-- Section 2: Pricing -->
-
 <div class="pricing-container">
   <!-- Header -->
   <header class="pricing-header">
@@ -392,7 +393,7 @@
     </div>
     <div class="faq-container">
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" (click)="toggleFaq(0)">
           <span>What is the duration of each session?</span>
           <svg class="faq-icon" fill="currentColor" viewbox="0 0 20 20">
             <path
@@ -402,7 +403,7 @@
             ></path>
           </svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" [class.open]="faqStates[0]">
           <div class="faq-answer-content">
             The duration of each session depends on the selected plan: 30
             minutes, 45 minutes, or 60 minutes. You can choose the duration that
@@ -411,7 +412,7 @@
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" (click)="toggleFaq(1)">
           <span>Can I change the class schedule later?</span>
           <svg class="faq-icon" fill="currentColor" viewbox="0 0 20 20">
             <path
@@ -421,7 +422,7 @@
             ></path>
           </svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" [class.open]="faqStates[1]">
           <div class="faq-answer-content">
             Yes, you can modify the class schedule at any time in coordination
             with the specialized teacher. We provide full flexibility to suit
@@ -430,7 +431,7 @@
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" (click)="toggleFaq(2)">
           <span>Do the lessons include monthly follow-up?</span>
           <svg class="faq-icon" fill="currentColor" viewbox="0 0 20 20">
             <path
@@ -440,7 +441,7 @@
             ></path>
           </svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" [class.open]="faqStates[2]">
           <div class="faq-answer-content">
             Yes, all plans include detailed monthly reports on progress and
             achievements, in addition to recommendations for improving
@@ -449,7 +450,7 @@
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" (click)="toggleFaq(3)">
           <span>Can I add another child?</span>
           <svg class="faq-icon" fill="currentColor" viewbox="0 0 20 20">
             <path
@@ -459,7 +460,7 @@
             ></path>
           </svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" [class.open]="faqStates[3]">
           <div class="faq-answer-content">
             Of course! You can add additional children to the same plan or
             choose a separate plan for each child according to their different
@@ -468,7 +469,7 @@
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" (click)="toggleFaq(4)">
           <span>What type of materials are used?</span>
           <svg class="faq-icon" fill="currentColor" viewbox="0 0 20 20">
             <path
@@ -478,7 +479,7 @@
             ></path>
           </svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" [class.open]="faqStates[4]">
           <div class="faq-answer-content">
             We use advanced educational materials including the Holy Quran,
             approved Tajweed books, and modern interactive tools to ensure a
@@ -487,7 +488,7 @@
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" (click)="toggleFaq(5)">
           <span>How does my child start their reading journey?</span>
           <svg class="faq-icon" fill="currentColor" viewbox="0 0 20 20">
             <path
@@ -497,7 +498,7 @@
             ></path>
           </svg>
         </button>
-        <div class="faq-answer">
+        <div class="faq-answer" [class.open]="faqStates[5]">
           <div class="faq-answer-content">
             After registration, the child's current level will be assessed and a
             customized educational plan will be set for them, then starting with
